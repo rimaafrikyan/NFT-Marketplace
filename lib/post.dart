@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:nft_marketplace/detail.dart';
 
 class Post extends StatelessWidget {
   String price;
@@ -32,11 +33,13 @@ class Post extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: ((context) => Detail(creator: creator, name: name, price: price, image: image, day: day, follower: follower, creator_image: creator_image, minutes: minutes, hours: hours))));
+        },
         child: Container(
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage('assets/images/${image}.png'),
+                  image: AssetImage('assets/images/${image}.jpg'),
                   fit: BoxFit.cover),
               borderRadius: BorderRadius.circular(20),
               boxShadow: [
@@ -52,7 +55,7 @@ class Post extends StatelessWidget {
             children: [
               Padding(
                 padding:
-                const EdgeInsets.symmetric(horizontal: 14, vertical: 15),
+                    const EdgeInsets.symmetric(horizontal: 14, vertical: 15),
                 child: Row(
                   children: [
                     ClipRRect(
@@ -83,9 +86,10 @@ class Post extends StatelessWidget {
                       width: 4,
                     ),
                     Text(':',
-                        style: TextStyle(fontSize: 20, color: Colors.white)
+                        style: TextStyle(fontSize: 20, color: Colors.white)),
+                    SizedBox(
+                      width: 4,
                     ),
-                    SizedBox(width: 4,),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(5),
                       child: BackdropFilter(
@@ -114,9 +118,10 @@ class Post extends StatelessWidget {
                       width: 4,
                     ),
                     Text(':',
-                        style: TextStyle(fontSize: 20, color: Colors.white)
+                        style: TextStyle(fontSize: 20, color: Colors.white)),
+                    SizedBox(
+                      width: 4,
                     ),
-                    SizedBox(width: 4,),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(5),
                       child: BackdropFilter(
@@ -141,7 +146,6 @@ class Post extends StatelessWidget {
                         ),
                       ),
                     ),
-
                   ],
                 ),
               ),
@@ -151,47 +155,53 @@ class Post extends StatelessWidget {
                 left: 0,
                 right: 0,
                 child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 15),
-                    child: Row(
-                      children: [
-                    Expanded(child: Container(height: 50,), flex: 3),
-                Expanded(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(5),
-                    child: BackdropFilter(
-                        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                        child: Container(
-                          height: 50,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              gradient: LinearGradient(
-                                  begin: Alignment.centerLeft,
-                                  end: Alignment.centerRight,
-                                  colors: [
-                                    Colors.grey.shade200.withOpacity(0.6),
-                                    Colors.grey.shade100.withOpacity(0.3),
-                                  ],
-                              ),
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Row(
+                    children: [
+                      Expanded(
+                          child: Container(
+                            height: 50,
                           ),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Image.asset('assets/images/et.png'),
-                                Text(
-                                    price + ' ETH',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                ),),
-                              ],
+                          flex: 3),
+                      Expanded(
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(5),
+                            child: BackdropFilter(
+                              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                              child: Container(
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(5),
+                                  gradient: LinearGradient(
+                                    begin: Alignment.centerLeft,
+                                    end: Alignment.centerRight,
+                                    colors: [
+                                      Colors.grey.shade200.withOpacity(0.6),
+                                      Colors.grey.shade100.withOpacity(0.3),
+                                    ],
+                                  ),
+                                ),
+                                child: Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 8),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Image.asset('assets/images/et.jpg'),
+                                      Text(
+                                        price + ' ETH',
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
-                        ),
-                    ),
-                  ),
-                    flex: 2
-                ),
+                          flex: 2),
                     ],
                   ),
                 ),
