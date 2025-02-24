@@ -32,7 +32,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xfff4f6f8),
+      // backgroundColor: Color(0xfff4f6f8),
       body: SafeArea(
         child: Stack(
           alignment: AlignmentDirectional.bottomCenter,
@@ -55,7 +55,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   child: TabBarView(
                     controller: _controller,
                     children: [
-                      // Content for the "New" tab
                       SingleChildScrollView(
                         child: Column(
                           children: [
@@ -67,14 +66,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                         ),
                       ),
                       ArtTab(),
-                      // Content for the "Art" tab
-                      // Center(
-                      //   child: Text("Art Content"),
-                      // ),
-                      // Content for the "Music" tab
-                      // Center(
-                      //   child: Text("Music Content"),
-                      // ),
                       MusicTab(),
                     ],
                   ),
@@ -158,7 +149,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
           controller: _controller,
           labelColor: Colors.grey.shade700,
           unselectedLabelColor: Colors.grey.shade500,
-          indicatorColor: Color(0xffF35383),
+          indicatorColor: Color.fromARGB(255, 229, 157, 179),
           labelStyle: TextStyle(fontWeight: FontWeight.w600),
           tabs: [
             Tab(
@@ -182,7 +173,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         children: [
           Text(
             "Live auctions",
-            style: TextStyle(fontSize: 21, fontWeight: FontWeight.w600),
+            style: TextStyle(fontSize: 21, fontWeight: FontWeight.w800,  color: Colors.grey.shade600, ),
           ),
           Row(
             children: [
@@ -190,6 +181,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 "more",
                 style: TextStyle(
                   fontSize: 17,
+                   color: Colors.grey.shade600,
                 ),
               ),
               Icon(Icons.arrow_right_sharp)

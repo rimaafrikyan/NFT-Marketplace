@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class MusicTab extends StatelessWidget {
-  // Sample data for music NFTs
   final List<Map<String, String>> musicItems = [
    {
       'image': 'assets/images/music1.jpg',
@@ -50,7 +49,7 @@ class MusicTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xfff4f6f8),
+      // backgroundColor: Color(0xfff4f6f8),
       body: ListView.builder(
         padding: EdgeInsets.all(16.0),
         itemCount: musicItems.length,
@@ -86,7 +85,7 @@ class MusicItemLine extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: 8.0),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: const Color.fromARGB(255, 94, 91, 91),
         borderRadius: BorderRadius.circular(8.0),
         boxShadow: [
           BoxShadow(
@@ -117,7 +116,7 @@ class MusicItemLine extends StatelessWidget {
           artist,
           style: TextStyle(
             fontSize: 14.0,
-            color: Colors.grey,
+            color: const Color.fromARGB(255, 214, 211, 211),
           ),
         ),
         trailing: Text(
@@ -125,7 +124,7 @@ class MusicItemLine extends StatelessWidget {
           style: TextStyle(
             fontSize: 14.0,
             fontWeight: FontWeight.bold,
-            color: Colors.blue,
+            color: const Color.fromARGB(255, 140, 156, 169),
           ),
         ),
       ),

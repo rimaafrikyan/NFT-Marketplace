@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ArtTab extends StatelessWidget {
-  // Sample data for art NFTs
   final List<Map<String, String>> artItems = [
     {
       'image': 'assets/images/art1.jpg',
@@ -44,7 +43,7 @@ class ArtTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xfff4f6f8),
+      // backgroundColor: Color(0xfff4f6f8),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: GridView.builder(
@@ -131,7 +130,8 @@ class ArtItemCard extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 14.0,
                     fontWeight: FontWeight.bold,
-                    color: Colors.blue,
+                    color: const Color.fromARGB(255, 171, 185, 197),
+
                   ),
                 ),
               ],

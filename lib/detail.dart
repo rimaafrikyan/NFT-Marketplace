@@ -26,7 +26,7 @@ class Detail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xfff4f6f8),
+      // backgroundColor: Color(0xfff4f6f8),
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
@@ -274,7 +274,7 @@ class Detail extends StatelessWidget {
               topLeft: Radius.circular(70),
               topRight: Radius.circular(70),
             ),
-            color: Color(0xfff4f6f8),
+            color: Color.fromARGB(255, 23, 23, 23),
           ),
           child: Column(
             children: [
@@ -282,7 +282,7 @@ class Detail extends StatelessWidget {
               Container(
                 width: 80,
                 height: 4,
-                color: Colors.black,
+                color: const Color.fromARGB(255, 116, 114, 114),
               )
             ],
           ),
